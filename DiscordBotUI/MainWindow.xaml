@@ -1,0 +1,35 @@
+﻿<Window x:Name="Resources" x:Class="DiscordBotUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiscordBotUI"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Discord Bot" Height="420.835" Width="788.444">
+    
+    <Grid Margin="0,0,0.286,-0.286" Background="LightBlue">
+        <Button x:Name="ConnectBotton" Content="{Binding CONNECT, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Margin="0,108,0,0" VerticalAlignment="Top" Width="87" Click="Buttom_Connect"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="161,62,0,0" TextWrapping="Wrap" Text="{Binding TOKEN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="465"/>
+        <DataGrid  Name="MessageGrid" AutoGenerateColumns="False" Margin="100,153,100,101.714" RenderTransformOrigin="0.0,0.0" MaxWidth="590" HeadersVisibility="Column" HorizontalAlignment="Center">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.114"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.273"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="偵測頻道" Binding="{Binding channel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" CanUserSort="False"/>
+                <DataGridTextColumn Header="偵測內容" Binding="{Binding index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" CanUserSort="False"/>
+                <DataGridTextColumn Header="回覆內容" Binding="{Binding output, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="481,344,0,0" VerticalAlignment="Top" Width="75" Click="DeleteButton_Click"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="248,344,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click"/>
+        <TextBlock Margin="348,23,347.571,0" TextWrapping="Wrap" Text="                             TOKEN"  Width="87" RenderTransformOrigin="-0.095,-0.199" TextAlignment="Center" VerticalAlignment="Top" FontSize="12" Height="49" />
+
+
+    </Grid>
+</Window>
